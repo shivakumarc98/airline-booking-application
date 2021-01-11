@@ -1,18 +1,18 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import FlightDetails from './FlightDetails';
 import Header from './Header';
 
-const Home = () => {
+const BookingSummary = () => {
+
 
     return (
         <>
             <Header />
             <Container>
-                <FlightDetails />
+                Booking Summary
             </Container>
         </>
-    );
-};
+    )
+}
 
-export default Home;
+export default BookingSummary;
