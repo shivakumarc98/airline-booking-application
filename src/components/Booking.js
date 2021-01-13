@@ -11,7 +11,8 @@ const Booking = () => {
             <Header />
             <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "80vh" }}>
                 <div className="w-100" style={{ maxWidth: "800px" }}>
-                    <Card border="primary">
+                <div className="homepage">
+                    
                         <Card.Body>
                             <Form>
                                 <Form.Row>
@@ -54,12 +55,10 @@ const Booking = () => {
                                         </Form.Control>
                                     </Form.Group>
                                 </Form.Row>
-                                <Button variant="primary" type="submit">
-                                    Submit
-                            </Button>
+                                <Button variant="primary" type="submit" href="/payment">Submit</Button>
                             </Form>
                         </Card.Body>
-                    </Card>
+                    </div>
                 </div>
             </Container>
         </>

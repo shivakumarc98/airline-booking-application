@@ -22,9 +22,10 @@ const Header = () => {
     }
 
     return (
-        <Navbar bg="primary" variant="dark">
+        <Navbar bg="primary"  variant="dark">
             <Navbar.Brand href="/">Airline Booking</Navbar.Brand>
             <Nav className="ml-auto">
+
                 <NavDropdown title={currentUser.email}>
                     <NavDropdown.Item href="/update-profile">Update Profile</NavDropdown.Item>
                     <NavDropdown.Item href="/booking-summary">My Booking</NavDropdown.Item>

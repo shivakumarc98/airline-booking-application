@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
-import { Container, Card, Form, Button, Alert } from 'react-bootstrap';
+import { Container, Card, Form, Button, Alert} from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import './../App.css';
 
 const Login = () => {
     const emailRef = useRef();
@@ -29,7 +30,10 @@ const Login = () => {
         <>
             <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
                 <div className="w-100" style={{ maxWidth: "400px" }}>
-                    <Card>
+               
+
+               <div className="homepage">
+                    
                         <Card.Body>
                             <h2 className="text-center mb-4">Log In</h2>
                             {error && <Alert variant="danger">{error}</Alert>}
@@ -44,14 +48,21 @@ const Login = () => {
                                 </Form.Group>
                                 <Button disabled={loading} className="w-100" type="submit">Log In</Button>
                             </Form>
+
+
+                            
                             <div className="w-100 text-center mt-2">
                                 <Link to="/forgot-password">Forgot Password?</Link>
                             </div>
                         </Card.Body>
-                    </Card>
+                   
                     <div className="w-100 text-center mt-2">
                         Need an account? <Link to="/signup">Sign Up</Link>
                     </div>
+
+                    </div>
+
+                   
                 </div>
             </Container>
         </>

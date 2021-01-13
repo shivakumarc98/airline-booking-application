@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Table, Button } from 'react-bootstrap';
+import { Container, Table, Button  } from 'react-bootstrap';
 import firebase from 'firebase';
 
 const FlightDetails = () => {
@@ -23,7 +23,7 @@ const FlightDetails = () => {
     return (
         <>
             <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
-                <Table striped bordered hover size="sm">
+                <Table  striped bordered hover variant="dark">
                     <thead>
                         <tr>
                             <th>Flight no</th>
@@ -55,6 +55,7 @@ const FlightDetails = () => {
                         })}
                     </tbody>
                 </Table>
+
             </Container>
         </>
     )
