@@ -1,15 +1,9 @@
-
-
-
 body {
     background-image: url(pic.jpg);
     background-size: cover;
     background-position: center center;
 }
-
-
 .homepage{
-   
     box-shadow: 0px 2px 7px rgba(0,0,0,0.2);
     overflow:hidden;
     color:#ffffff;

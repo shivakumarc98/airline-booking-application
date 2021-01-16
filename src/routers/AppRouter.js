@@ -16,14 +16,14 @@ const AppRouter = () => (
     <Router>
         <AuthProvider>
             <Switch>
-                <PrivateRoute path="/" component={Home} exact />
-                <PrivateRoute path="/update-profile" component={UpdateProfile} />
                 <Route path="/login" component={Login} />
                 <Route path="/signup" component={Signup} />
                 <Route path="/forgot-password" component={ForgotPassword} />
-                <Route path="/booking" component={Booking} />
-                <Route path="/booking-summary" component={BookingSummary} />
-                <Route path="/payment" component={Payment} />
+                <PrivateRoute path="/" component={Home} exact />
+                <PrivateRoute path="/update-profile" component={UpdateProfile} />
+                <PrivateRoute path="/booking" component={Booking} />
+                <PrivateRoute path="/booking-summary" component={BookingSummary} />
+                <PrivateRoute path="/payment" component={Payment} />
             </Switch>
         </AuthProvider>
     </Router>

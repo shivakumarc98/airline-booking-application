@@ -1,29 +1,32 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Table, Button  } from 'react-bootstrap';
+import { Container, Table, Button } from 'react-bootstrap';
 import firebase from 'firebase';
+import { useHistory } from "react-router-dom";
 
 const FlightDetails = () => {
 
     const [flights, setFlights] = useState([]);
+    const history = useHistory();
+
+    const handleBooking = (flight) => {
+        history.push('/booking', flight)
+    }
 
     useEffect(() => {
         var database = firebase.database();
         database.ref('flights').once('value').then((snapshot) => {
             let flightList = [];
             snapshot.forEach(snap => {
-                console.log(snap.key)
                 flightList.push(snap.val());
             });
-            console.log('flightList', flightList)
             setFlights(flightList);
         })
     }, [])
-    console.log('flights', flights)
 
     return (
         <>
-            <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
-                <Table  striped bordered hover variant="dark">
+            <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "120vh" }}>
+                <Table striped bordered hover variant="dark">
                     <thead>
                         <tr>
                             <th>Flight no</th>
@@ -49,7 +52,7 @@ const FlightDetails = () => {
                                     <td>{flight.time}</td>
                                     <td>{flight.airportName}</td>
                                     <td>{flight.ticketPrice}</td>
-                                    <td><Button variant="link" href="/booking">Book now</Button></td>
+                                    <td><Button onClick={() => handleBooking(flight)}>Book now</Button></td>
                                 </tr>
                             )
                         })}
